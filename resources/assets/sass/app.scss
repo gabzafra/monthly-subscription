@@ -7,3 +7,13 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import 'base/module';
+@import 'components/module';
+@import 'layout/module';
+@import 'pages/module';
+
+
+body {
+  background: #EFEFEF;
+}

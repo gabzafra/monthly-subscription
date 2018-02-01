@@ -4,9 +4,9 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Post::class, function (Faker $faker) {
     $title = $faker->realText(20);
-    $slug  = srt_slug($title, '-');
+    $slug  = str_slug($title, '-');
     return [
-        'user_id' => function() { return factory(App\User::class)->create()->id},
+        'user_id' => function() { return factory(App\User::class)->create()->id;},
         'title'   => $title,
         'slug'    => $slug,
         'image'   => $faker->imageUrl(1200, 600, 'animals'),
