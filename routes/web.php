@@ -9,6 +9,12 @@ Route::post('subscribe', 'SubscribeController@processSubscribe');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('welcome', 'SubscribeController@showWelcome')->middleware('subscribed');
+
+    Route::get('account', 'AccountController@showAccount');
+    Route::post('account/subscription', 'AccountController@updateSubscription');
+    Route::post('account/card', 'AccountController@updateCard');
+    Route::get('account/invoices/{invoice}', 'AccountController@downloadInvoice');
+    Route::delete('account/subscription', 'AccountController@deleteSubscription');
 });
 
 
