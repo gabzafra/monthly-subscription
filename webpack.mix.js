@@ -16,5 +16,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 mix.scripts([
     'node_modules/jquery/dist/jquery.min.js',
-    'resources/assets/js/magic.js'
+    'resources/assets/js/magic.js',
+    'resources/assets/js/subscribe.js'
 ],'public/js/all.js' );

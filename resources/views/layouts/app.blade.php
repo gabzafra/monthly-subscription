@@ -21,6 +21,10 @@
         @include('partials.footer')
     </div>
 
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script>
+        Stripe.setPublishableKey("{{ env('STRIPE_KEY') }}");
+    </script>
     <script src="js/all.js"></script>
   </body>
 </html>

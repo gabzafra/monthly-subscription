@@ -8404,6 +8404,10 @@ h6 {
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+.card.card-padded {
+  padding: 30px;
+}
+
 .card .img-container {
   display: block;
   background-size: cover;
@@ -8555,6 +8559,39 @@ section .section-header h2:after {
 
 .auth-card h1 {
   text-align: center;
+}
+
+.subscription-option input[type=radio] {
+  display: none;
+}
+
+.subscription-option label {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  border-radius: 4px;
+  background: #F2F2F2;
+  color: #545454;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 50px;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
+.subscription-option .plan-price {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+.subscription-option .plan-name {
+  display: block;
+  font-size: 24px;
+}
+
+.subscription-option input[type=radio]:checked + label {
+  background: #0B79EE;
+  color: #FFF;
 }
 
 body {
