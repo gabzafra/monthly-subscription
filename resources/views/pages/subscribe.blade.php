@@ -12,6 +12,9 @@
 <section class="container">
   <div class="card card-padded">
       <form action="/subscribe" method="POST" id="subscribe-form">
+
+        {!! csrf_field() !!}
+
         @if (Auth::guest())
         <div class="section-header">
           <h2>User Info</h2>
@@ -84,15 +87,22 @@
           <div class="form-group row">
             <div class="col-xs-3">
               <label>Expiration Month</label>
-              <input type="text" class="form-control" placeholder="01" data-stripe="exp-month">
+              <input type="text" class="form-control" placeholder="08" data-stripe="exp-month">
             </div>
             <div class="col-xs-3">
               <label>Expiration Year</label>
               <input type="text" class="form-control" placeholder="2020" data-stripe="exp-year">
             </div>
           </div>
-
-          <div class="form-group text-center">\
+          <div class="stripe-errors"></div>
+          @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    {{ $error }}<br>
+                @endforeach
+            </div>
+          @endif
+          <div class="form-group text-center">
             <button type="submit" class="btn btn-lg btn-success btn-block">Join</button>
           </div>
       </form>
